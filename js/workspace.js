@@ -17,14 +17,12 @@ function initWeatherDashboard() {
 
   if (!cityInput || !searchBtn || !displayContainer) return;
 
-  const fallbackKey = "224cca4c70123acc7c84ef439e0842f2";
-
   // Read key from shared global environment configurations
   async function getApiKey() {
     if (window.envConfig && window.envConfig.WEATHER_API_KEY) {
       return window.envConfig.WEATHER_API_KEY;
     }
-    return fallbackKey;
+    return "";
   }
 
   async function searchWeather(city) {

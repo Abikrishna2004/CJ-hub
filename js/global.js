@@ -23,14 +23,14 @@ document.addEventListener("DOMContentLoaded", async () => {
    ========================================================================== */
 async function loadEnv() {
   const config = {
-    WEATHER_API_KEY: "224cca4c70123acc7c84ef439e0842f2",
-    FIREBASE_API_KEY: "AIzaSyBtc6-wffi3bThmlBObJN3y4YM88HVkRVc",
-    FIREBASE_AUTH_DOMAIN: "compilejourney-hub.firebaseapp.com",
-    FIREBASE_PROJECT_ID: "compilejourney-hub",
-    FIREBASE_STORAGE_BUCKET: "compilejourney-hub.firebasestorage.app",
-    FIREBASE_MESSAGING_SENDER_ID: "378084211033",
-    FIREBASE_APP_ID: "1:378084211033:web:cf5b8b3e9d6000950f7448",
-    FIREBASE_MEASUREMENT_ID: "G-5TGDN1FYPX"
+    WEATHER_API_KEY: "",
+    FIREBASE_API_KEY: "",
+    FIREBASE_AUTH_DOMAIN: "",
+    FIREBASE_PROJECT_ID: "",
+    FIREBASE_STORAGE_BUCKET: "",
+    FIREBASE_MESSAGING_SENDER_ID: "",
+    FIREBASE_APP_ID: "",
+    FIREBASE_MEASUREMENT_ID: ""
   };
 
   try {
