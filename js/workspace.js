@@ -19,23 +19,10 @@ function initWeatherDashboard() {
 
   const fallbackKey = "224cca4c70123acc7c84ef439e0842f2";
 
-  // Dynamic environment variable parser from .env file
+  // Read key from shared global environment configurations
   async function getApiKey() {
-    try {
-      const response = await fetch(".env");
-      if (response.ok) {
-        const text = await response.text();
-        const match = text.match(/WEATHER_API_KEY\s*=\s*([a-zA-Z0-9]+)/);
-        if (match && match[1]) {
-          return match[1].trim();
-        }
-        const matchAlt = text.match(/OPENWEATHER_API_KEY\s*=\s*([a-zA-Z0-9]+)/);
-        if (matchAlt && matchAlt[1]) {
-          return matchAlt[1].trim();
-        }
-      }
-    } catch (e) {
-      // Gracefully catch fetch blocks and fallback
+    if (window.envConfig && window.envConfig.WEATHER_API_KEY) {
+      return window.envConfig.WEATHER_API_KEY;
     }
     return fallbackKey;
   }

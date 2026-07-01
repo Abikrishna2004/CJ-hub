@@ -1,5 +1,10 @@
 // Compile Journey Hub - Global Interactivity Orchestrator
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  // 0. Parse Environment configurations dynamically and initialize Firebase
+  const env = await loadEnv();
+  window.envConfig = env;
+  initFirebase(env);
+
   // 1. Initialize Universal Theme Customizer (Independent Background and Accents)
   initThemeCustomizer();
 
@@ -12,6 +17,67 @@ document.addEventListener("DOMContentLoaded", () => {
   // 4. Initialize Interactive Modal Popup (if triggers exist on the page)
   initPopupModal();
 });
+
+/* ==========================================================================
+   0. CONFIG & FIREBASE INITIALIZATION
+   ========================================================================== */
+async function loadEnv() {
+  const config = {
+    WEATHER_API_KEY: "224cca4c70123acc7c84ef439e0842f2",
+    FIREBASE_API_KEY: "AIzaSyBtc6-wffi3bThmlBObJN3y4YM88HVkRVc",
+    FIREBASE_AUTH_DOMAIN: "compilejourney-hub.firebaseapp.com",
+    FIREBASE_PROJECT_ID: "compilejourney-hub",
+    FIREBASE_STORAGE_BUCKET: "compilejourney-hub.firebasestorage.app",
+    FIREBASE_MESSAGING_SENDER_ID: "378084211033",
+    FIREBASE_APP_ID: "1:378084211033:web:cf5b8b3e9d6000950f7448",
+    FIREBASE_MEASUREMENT_ID: "G-5TGDN1FYPX"
+  };
+
+  try {
+    const response = await fetch(".env");
+    if (response.ok) {
+      const text = await response.text();
+      const lines = text.split("\n");
+      lines.forEach(line => {
+        const parts = line.split("=");
+        if (parts.length >= 2) {
+          const key = parts[0].trim();
+          const val = parts.slice(1).join("=").trim();
+          if (key && val) {
+            config[key] = val;
+          }
+        }
+      });
+    }
+  } catch (e) {
+    // Graceful fallback
+  }
+  return config;
+}
+
+async function initFirebase(env) {
+  try {
+    const firebaseConfig = {
+      apiKey: env.FIREBASE_API_KEY,
+      authDomain: env.FIREBASE_AUTH_DOMAIN,
+      projectId: env.FIREBASE_PROJECT_ID,
+      storageBucket: env.FIREBASE_STORAGE_BUCKET,
+      messagingSenderId: env.FIREBASE_MESSAGING_SENDER_ID,
+      appId: env.FIREBASE_APP_ID,
+      measurementId: env.FIREBASE_MEASUREMENT_ID
+    };
+
+    // Dynamically load SDKs from CDN
+    const { initializeApp } = await import("https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js");
+    const { getAnalytics } = await import("https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js");
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    console.log("Firebase & Analytics loaded and initialized successfully.");
+  } catch (err) {
+    console.warn("Firebase could not be initialized (might be run locally via file:/// or offline):", err);
+  }
+}
 
 /* ==========================================================================
    1. UNIVERSAL THEME CUSTOMIZER (BACKGROUND & ACCENTS)
