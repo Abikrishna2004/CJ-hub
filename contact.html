@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Compile Journey</title>
   <meta name="description" content="Have questions, suggestions, or collaboration ideas? We'd love to hear from you. Get in touch with us.">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="author" content="Abikrishna">
+  <meta name="keywords" content="Compile Journey, learn programming, student roadmaps, developer weather dashboard, task tracker, Web Development, Data Science, AI ML, DSA">
+  <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
   <script>
@@ -17,8 +21,8 @@
   </script>
 
   <!-- HEADER -->
-  <header class="header">
-    <div class="container nav-container">
+  <header class="header" role="banner">
+    <nav class="container nav-container" aria-label="Main Navigation">
       <a href="index.html" class="logo">
         <img src="assets/logo.jpg" alt="Compile Journey Logo" class="logo-icon-img">
         <div style="display:flex; flex-direction:column; line-height:1.1;">
@@ -34,28 +38,28 @@
         </button>
 
         <!-- Floating Customizer Panel -->
-        <div class="glass-card customizer-panel" id="theme-customizer-panel">
+        <div class="glass-card customizer-panel" id="theme-customizer-panel" role="radiogroup" aria-label="Theme Customizer Options">
           <div class="customizer-section">
             <span class="customizer-title">Choose Background</span>
             <div class="color-options">
-              <button class="color-circle bg-opt" data-bg="obsidian" style="background-color: #05070f; border: 1px solid rgba(255,255,255,0.15);" title="Obsidian Dark" aria-label="Obsidian Dark"></button>
-              <button class="color-circle bg-opt" data-bg="midnight" style="background-color: #060814; border: 1px solid rgba(255,255,255,0.15);" title="Midnight Blue" aria-label="Midnight Blue"></button>
-              <button class="color-circle bg-opt" data-bg="sepia" style="background-color: #f8f3e6; border: 1px solid rgba(0,0,0,0.1);" title="Sepia Cream" aria-label="Sepia Cream"></button>
-              <button class="color-circle bg-opt" data-bg="light" style="background-color: #f8fafc; border: 1px solid rgba(0,0,0,0.1);" title="Professional Light" aria-label="Professional Light"></button>
+              <button class="color-circle bg-opt" data-bg="obsidian" style="background-color: #05070f; border: 1px solid rgba(255,255,255,0.15);" title="Obsidian Dark" aria-label="Obsidian Dark background" role="radio" aria-checked="false"></button>
+              <button class="color-circle bg-opt" data-bg="midnight" style="background-color: #060814; border: 1px solid rgba(255,255,255,0.15);" title="Midnight Blue" aria-label="Midnight Blue background" role="radio" aria-checked="false"></button>
+              <button class="color-circle bg-opt" data-bg="sepia" style="background-color: #f8f3e6; border: 1px solid rgba(0,0,0,0.1);" title="Sepia Cream" aria-label="Sepia Cream background" role="radio" aria-checked="false"></button>
+              <button class="color-circle bg-opt" data-bg="light" style="background-color: #f8fafc; border: 1px solid rgba(0,0,0,0.1);" title="Professional Light" aria-label="Professional Light background" role="radio" aria-checked="false"></button>
             </div>
           </div>
           <div class="customizer-section">
             <span class="customizer-title">Choose Accent</span>
             <div class="color-options">
-              <button class="color-circle acc-opt" data-acc="cyan" style="background-color: #00f2fe;" title="Cyber Cyan" aria-label="Cyber Cyan"></button>
-              <button class="color-circle acc-opt" data-acc="magenta" style="background-color: #e100ff;" title="Neon Magenta" aria-label="Neon Magenta"></button>
-              <button class="color-circle acc-opt" data-acc="emerald" style="background-color: #10b981;" title="Forest Emerald" aria-label="Forest Emerald"></button>
-              <button class="color-circle acc-opt" data-acc="amber" style="background-color: #f59e0b;" title="Solar Amber" aria-label="Solar Amber"></button>
+              <button class="color-circle acc-opt" data-acc="cyan" style="background-color: #00f2fe;" title="Cyber Cyan" aria-label="Cyber Cyan Accent" role="radio" aria-checked="false"></button>
+              <button class="color-circle acc-opt" data-acc="magenta" style="background-color: #e100ff;" title="Neon Magenta" aria-label="Neon Magenta Accent" role="radio" aria-checked="false"></button>
+              <button class="color-circle acc-opt" data-acc="emerald" style="background-color: #10b981;" title="Forest Emerald" aria-label="Forest Emerald Accent" role="radio" aria-checked="false"></button>
+              <button class="color-circle acc-opt" data-acc="amber" style="background-color: #f59e0b;" title="Solar Amber" aria-label="Solar Amber Accent" role="radio" aria-checked="false"></button>
             </div>
           </div>
         </div>
 
-        <button class="mobile-menu-btn" id="mobile-menu-trigger" aria-label="Toggle Navigation Menu">
+        <button class="mobile-menu-btn" id="mobile-menu-trigger" aria-label="Toggle Navigation Menu" aria-expanded="false">
           <svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
       </div>
@@ -67,114 +71,116 @@
         <li><a href="workspace.html" class="nav-link">Workspace</a></li>
         <li><a href="contact.html" class="nav-link active">Contact</a></li>
       </ul>
-    </div>
+    </nav>
   </header>
 
-  <!-- CONTACT US SECTION -->
-  <section class="contact-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Get in Touch</span>
-        <h1 class="section-title">Contact Us</h1>
-        <p class="section-subtitle">Have questions, suggestions, or collaboration ideas? We'd love to hear from you.</p>
-      </div>
+  <main id="main-content">
+    <!-- CONTACT US SECTION -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Get in Touch</span>
+          <h1 class="section-title">Contact Us</h1>
+          <p class="section-subtitle">Have questions, suggestions, or collaboration ideas? We'd love to hear from you.</p>
+        </div>
 
-      <div class="contact-grid">
-        <!-- Contact Information -->
-        <div class="contact-info-panel">
-          <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: var(--space-sm);">Contact Information</h2>
-          <p class="contact-info-desc">Feel free to reach out through any of these social channels or drop an email directly. We strive to reply within 24-48 hours.</p>
-          
-          <div class="contact-details-list">
-            <!-- Email -->
-            <div class="contact-detail-item">
-              <div class="contact-detail-icon">
-                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        <div class="contact-grid">
+          <!-- Contact Information -->
+          <div class="contact-info-panel">
+            <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: var(--space-sm);">Contact Information</h2>
+            <p class="contact-info-desc">Feel free to reach out through any of these social channels or drop an email directly. We strive to reply within 24-48 hours.</p>
+            
+            <div class="contact-details-list">
+              <!-- Email -->
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="contact-detail-content">
+                  <span class="contact-detail-label">Email Address</span>
+                  <span class="contact-detail-value"><a href="mailto:compilejourney@gmail.com">compilejourney@gmail.com</a></span>
+                </div>
               </div>
-              <div class="contact-detail-content">
-                <span class="contact-detail-label">Email Address</span>
-                <span class="contact-detail-value"><a href="mailto:compilejourney@gmail.com">compilejourney@gmail.com</a></span>
-              </div>
-            </div>
 
-            <!-- LinkedIn -->
-            <div class="contact-detail-item">
-              <div class="contact-detail-icon">
-                <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              <!-- LinkedIn -->
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </div>
+                <div class="contact-detail-content">
+                  <span class="contact-detail-label">LinkedIn Profile</span>
+                  <span class="contact-detail-value"><a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile (opens in a new tab)">abikrishna-p-21195b304</a></span>
+                </div>
               </div>
-              <div class="contact-detail-content">
-                <span class="contact-detail-label">LinkedIn Profile</span>
-                <span class="contact-detail-value"><a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer">abikrishna-p-21195b304</a></span>
-              </div>
-            </div>
 
-            <!-- GitHub -->
-            <div class="contact-detail-item">
-              <div class="contact-detail-icon">
-                <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <!-- GitHub -->
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </div>
+                <div class="contact-detail-content">
+                  <span class="contact-detail-label">GitHub Profile</span>
+                  <span class="contact-detail-value"><a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile (opens in a new tab)">Abikrishna2004</a></span>
+                </div>
               </div>
-              <div class="contact-detail-content">
-                <span class="contact-detail-label">GitHub Profile</span>
-                <span class="contact-detail-value"><a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer">Abikrishna2004</a></span>
-              </div>
-            </div>
 
-            <!-- Instagram -->
-            <div class="contact-detail-item">
-              <div class="contact-detail-icon">
-                <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-              </div>
-              <div class="contact-detail-content">
-                <span class="contact-detail-label">Instagram Community</span>
-                <span class="contact-detail-value"><a href="https://instagram.com/compile.journey" target="_blank" rel="noopener noreferrer">@compile.journey</a></span>
+              <!-- Instagram -->
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </div>
+                <div class="contact-detail-content">
+                  <span class="contact-detail-label">Instagram Community</span>
+                  <span class="contact-detail-value"><a href="https://instagram.com/compile.journey" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile (opens in a new tab)">@compile.journey</a></span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Contact Form -->
-        <div class="glass-card form-card">
-          <h3 class="form-title">Send a Message</h3>
-          
-          <form action="#" method="POST" id="contact-form-realtime">
-            <div class="form-group">
-              <label for="form-name" class="form-label">Name</label>
-              <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. Alex" required>
-              <span class="feedback-msg" id="name-feedback"></span>
-            </div>
+          <!-- Contact Form -->
+          <div class="glass-card form-card">
+            <h3 class="form-title">Send a Message</h3>
+            
+            <form action="#" method="POST" id="contact-form-realtime" aria-label="Contact Form">
+              <div class="form-group">
+                <label for="form-name" class="form-label">Name</label>
+                <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. Alex" aria-required="true" required>
+                <span class="feedback-msg" id="name-feedback" aria-live="polite"></span>
+              </div>
 
-            <div class="form-group">
-              <label for="form-email" class="form-label">Email Address</label>
-              <input type="email" id="form-email" name="email" class="form-input" placeholder="e.g. alex@gmail.com" required>
-              <span class="feedback-msg" id="email-feedback"></span>
-            </div>
+              <div class="form-group">
+                <label for="form-email" class="form-label">Email Address</label>
+                <input type="email" id="form-email" name="email" class="form-input" placeholder="e.g. alex@gmail.com" aria-required="true" required>
+                <span class="feedback-msg" id="email-feedback" aria-live="polite"></span>
+              </div>
 
-            <div class="form-group">
-              <label for="form-phone" class="form-label">Phone Number</label>
-              <input type="tel" id="form-phone" name="phone" class="form-input" placeholder="e.g. 9876543210" required>
-              <span class="feedback-msg" id="phone-feedback"></span>
-            </div>
+              <div class="form-group">
+                <label for="form-phone" class="form-label">Phone Number</label>
+                <input type="tel" id="form-phone" name="phone" class="form-input" placeholder="e.g. 9876543210" aria-required="true" required>
+                <span class="feedback-msg" id="phone-feedback" aria-live="polite"></span>
+              </div>
 
-            <div class="form-group">
-              <label for="form-message" class="form-label">Message</label>
-              <textarea id="form-message" name="message" class="form-textarea" placeholder="Write your message details..." required></textarea>
-              <span class="feedback-msg" id="message-feedback"></span>
-            </div>
+              <div class="form-group">
+                <label for="form-message" class="form-label">Message</label>
+                <textarea id="form-message" name="message" class="form-textarea" placeholder="Write your message details..." aria-required="true" required></textarea>
+                <span class="feedback-msg" id="message-feedback" aria-live="polite"></span>
+              </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;" disabled>Submit</button>
-          </form>
+              <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;" disabled>Submit</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo">
-            <img src="assets/logo.jpg" alt="Compile Journey Logo" class="logo-icon-img">
+            <img src="assets/logo.jpg" alt="Compile Journey Logo" class="logo-icon-img" loading="lazy">
             <span class="text-gradient">Compile Journey</span>
           </a>
           <p class="footer-desc">Empowering students and aspiring developers to master programming, explore tech fields, and launch careers.</p>
@@ -193,8 +199,8 @@
         <div>
           <h4 class="footer-title">Socials</h4>
           <ul class="footer-links">
-            <li><a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile (opens in a new tab)">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile (opens in a new tab)">LinkedIn</a></li>
             <li><a href="contact.html">Instagram</a></li>
           </ul>
         </div>
@@ -203,10 +209,10 @@
       <div class="footer-bottom">
         <span class="footer-copyright">&copy; 2026 Compile Journey. All rights reserved. Created by Abikrishna.</span>
         <div class="footer-socials">
-          <a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub Profile">
+          <a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub Profile (opens in a new tab)">
             <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
           </a>
-          <a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn Profile">
+          <a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn Profile (opens in a new tab)">
             <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
           </a>
         </div>
@@ -219,7 +225,8 @@
     <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
   </button>
 
-  <!-- Shared Javascript main -->
-  <script src="js/main.js"></script>
+  <!-- Shared Javascript loaders -->
+  <script src="js/global.js"></script>
+  <script src="js/contact.js"></script>
 </body>
 </html>

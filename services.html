@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | Compile Journey</title>
   <meta name="description" content="Explore our range of learning and career guidance services designed to accelerate your growth in tech fields.">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="author" content="Abikrishna">
+  <meta name="keywords" content="Compile Journey, learn programming, student roadmaps, developer weather dashboard, task tracker, Web Development, Data Science, AI ML, DSA">
+  <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/services.css">
 </head>
 <body>
   <script>
@@ -17,8 +21,8 @@
   </script>
 
   <!-- HEADER -->
-  <header class="header">
-    <div class="container nav-container">
+  <header class="header" role="banner">
+    <nav class="container nav-container" aria-label="Main Navigation">
       <a href="index.html" class="logo">
         <img src="assets/logo.jpg" alt="Compile Journey Logo" class="logo-icon-img">
         <div style="display:flex; flex-direction:column; line-height:1.1;">
@@ -34,28 +38,28 @@
         </button>
 
         <!-- Floating Customizer Panel -->
-        <div class="glass-card customizer-panel" id="theme-customizer-panel">
+        <div class="glass-card customizer-panel" id="theme-customizer-panel" role="radiogroup" aria-label="Theme Customizer Options">
           <div class="customizer-section">
             <span class="customizer-title">Choose Background</span>
             <div class="color-options">
-              <button class="color-circle bg-opt" data-bg="obsidian" style="background-color: #05070f; border: 1px solid rgba(255,255,255,0.15);" title="Obsidian Dark" aria-label="Obsidian Dark"></button>
-              <button class="color-circle bg-opt" data-bg="midnight" style="background-color: #060814; border: 1px solid rgba(255,255,255,0.15);" title="Midnight Blue" aria-label="Midnight Blue"></button>
-              <button class="color-circle bg-opt" data-bg="sepia" style="background-color: #f8f3e6; border: 1px solid rgba(0,0,0,0.1);" title="Sepia Cream" aria-label="Sepia Cream"></button>
-              <button class="color-circle bg-opt" data-bg="light" style="background-color: #f8fafc; border: 1px solid rgba(0,0,0,0.1);" title="Professional Light" aria-label="Professional Light"></button>
+              <button class="color-circle bg-opt" data-bg="obsidian" style="background-color: #05070f; border: 1px solid rgba(255,255,255,0.15);" title="Obsidian Dark" aria-label="Obsidian Dark background" role="radio" aria-checked="false"></button>
+              <button class="color-circle bg-opt" data-bg="midnight" style="background-color: #060814; border: 1px solid rgba(255,255,255,0.15);" title="Midnight Blue" aria-label="Midnight Blue background" role="radio" aria-checked="false"></button>
+              <button class="color-circle bg-opt" data-bg="sepia" style="background-color: #f8f3e6; border: 1px solid rgba(0,0,0,0.1);" title="Sepia Cream" aria-label="Sepia Cream background" role="radio" aria-checked="false"></button>
+              <button class="color-circle bg-opt" data-bg="light" style="background-color: #f8fafc; border: 1px solid rgba(0,0,0,0.1);" title="Professional Light" aria-label="Professional Light background" role="radio" aria-checked="false"></button>
             </div>
           </div>
           <div class="customizer-section">
             <span class="customizer-title">Choose Accent</span>
             <div class="color-options">
-              <button class="color-circle acc-opt" data-acc="cyan" style="background-color: #00f2fe;" title="Cyber Cyan" aria-label="Cyber Cyan"></button>
-              <button class="color-circle acc-opt" data-acc="magenta" style="background-color: #e100ff;" title="Neon Magenta" aria-label="Neon Magenta"></button>
-              <button class="color-circle acc-opt" data-acc="emerald" style="background-color: #10b981;" title="Forest Emerald" aria-label="Forest Emerald"></button>
-              <button class="color-circle acc-opt" data-acc="amber" style="background-color: #f59e0b;" title="Solar Amber" aria-label="Solar Amber"></button>
+              <button class="color-circle acc-opt" data-acc="cyan" style="background-color: #00f2fe;" title="Cyber Cyan" aria-label="Cyber Cyan Accent" role="radio" aria-checked="false"></button>
+              <button class="color-circle acc-opt" data-acc="magenta" style="background-color: #e100ff;" title="Neon Magenta" aria-label="Neon Magenta Accent" role="radio" aria-checked="false"></button>
+              <button class="color-circle acc-opt" data-acc="emerald" style="background-color: #10b981;" title="Forest Emerald" aria-label="Forest Emerald Accent" role="radio" aria-checked="false"></button>
+              <button class="color-circle acc-opt" data-acc="amber" style="background-color: #f59e0b;" title="Solar Amber" aria-label="Solar Amber Accent" role="radio" aria-checked="false"></button>
             </div>
           </div>
         </div>
 
-        <button class="mobile-menu-btn" id="mobile-menu-trigger" aria-label="Toggle Navigation Menu">
+        <button class="mobile-menu-btn" id="mobile-menu-trigger" aria-label="Toggle Navigation Menu" aria-expanded="false">
           <svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
       </div>
@@ -67,95 +71,97 @@
         <li><a href="workspace.html" class="nav-link">Workspace</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
-    </div>
+    </nav>
   </header>
 
-  <!-- SERVICES MAIN SECTION -->
-  <section class="services-hero">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Offerings</span>
-        <h1 class="section-title">Our Services</h1>
-        <p class="section-subtitle">Structured paths, blueprints, and advisories to elevate your skills and prepare you for placements.</p>
+  <main id="main-content">
+    <!-- SERVICES MAIN SECTION -->
+    <section class="services-hero">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Offerings</span>
+          <h1 class="section-title">Our Services</h1>
+          <p class="section-subtitle">Structured paths, blueprints, and advisories to elevate your skills and prepare you for placements.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- 1. AI & ML Roadmaps -->
+          <div class="glass-card service-card">
+            <div class="service-card-header">
+              <div class="service-card-icon">
+                <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              </div>
+              <h3 class="service-card-title">AI & Machine Learning Roadmaps</h3>
+            </div>
+            <p class="service-card-desc">Comprehensive learning paths covering AI fundamentals, Machine Learning algorithms, Deep Learning, and Generative AI technologies.</p>
+          </div>
+
+          <!-- 2. Data Science Roadmaps -->
+          <div class="glass-card service-card">
+            <div class="service-card-header">
+              <div class="service-card-icon">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              </div>
+              <h3 class="service-card-title">Data Science Roadmaps</h3>
+            </div>
+            <p class="service-card-desc">Structured guidance for mastering Python, SQL, statistics, data visualization, machine learning, and analytical thinking.</p>
+          </div>
+
+          <!-- 3. Web Development Guidance -->
+          <div class="glass-card service-card">
+            <div class="service-card-header">
+              <div class="service-card-icon">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              </div>
+              <h3 class="service-card-title">Web Development Guidance</h3>
+            </div>
+            <p class="service-card-desc">Learn frontend and backend development through curated resources, projects, and industry-relevant technologies.</p>
+          </div>
+
+          <!-- 4. DSA Prep -->
+          <div class="glass-card service-card">
+            <div class="service-card-header">
+              <div class="service-card-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+              </div>
+              <h3 class="service-card-title">Data Structures & Algorithms Preparation</h3>
+            </div>
+            <p class="service-card-desc">Build strong problem-solving skills and prepare effectively for coding interviews and competitive programming.</p>
+          </div>
+
+          <!-- 5. Project Guidance -->
+          <div class="glass-card service-card">
+            <div class="service-card-header">
+              <div class="service-card-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+              </div>
+              <h3 class="service-card-title">Project Guidance</h3>
+            </div>
+            <p class="service-card-desc">Discover project ideas, implementation strategies, and best practices to strengthen your technical portfolio.</p>
+          </div>
+
+          <!-- 6. Career Guidance -->
+          <div class="glass-card service-card">
+            <div class="service-card-header">
+              <div class="service-card-icon">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              </div>
+              <h3 class="service-card-title">Career Guidance</h3>
+            </div>
+            <p class="service-card-desc">Get support with resume building, LinkedIn optimization, internship preparation, placement readiness, and career planning.</p>
+          </div>
+        </div>
       </div>
-
-      <div class="services-grid">
-        <!-- 1. AI & ML Roadmaps -->
-        <div class="glass-card service-card">
-          <div class="service-card-header">
-            <div class="service-card-icon">
-              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
-            </div>
-            <h3 class="service-card-title">AI & Machine Learning Roadmaps</h3>
-          </div>
-          <p class="service-card-desc">Comprehensive learning paths covering AI fundamentals, Machine Learning algorithms, Deep Learning, and Generative AI technologies.</p>
-        </div>
-
-        <!-- 2. Data Science Roadmaps -->
-        <div class="glass-card service-card">
-          <div class="service-card-header">
-            <div class="service-card-icon">
-              <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-            </div>
-            <h3 class="service-card-title">Data Science Roadmaps</h3>
-          </div>
-          <p class="service-card-desc">Structured guidance for mastering Python, SQL, statistics, data visualization, machine learning, and analytical thinking.</p>
-        </div>
-
-        <!-- 3. Web Development Guidance -->
-        <div class="glass-card service-card">
-          <div class="service-card-header">
-            <div class="service-card-icon">
-              <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-            </div>
-            <h3 class="service-card-title">Web Development Guidance</h3>
-          </div>
-          <p class="service-card-desc">Learn frontend and backend development through curated resources, projects, and industry-relevant technologies.</p>
-        </div>
-
-        <!-- 4. DSA Prep -->
-        <div class="glass-card service-card">
-          <div class="service-card-header">
-            <div class="service-card-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
-            </div>
-            <h3 class="service-card-title">Data Structures & Algorithms Preparation</h3>
-          </div>
-          <p class="service-card-desc">Build strong problem-solving skills and prepare effectively for coding interviews and competitive programming.</p>
-        </div>
-
-        <!-- 5. Project Guidance -->
-        <div class="glass-card service-card">
-          <div class="service-card-header">
-            <div class="service-card-icon">
-              <svg viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-            </div>
-            <h3 class="service-card-title">Project Guidance</h3>
-          </div>
-          <p class="service-card-desc">Discover project ideas, implementation strategies, and best practices to strengthen your technical portfolio.</p>
-        </div>
-
-        <!-- 6. Career Guidance -->
-        <div class="glass-card service-card">
-          <div class="service-card-header">
-            <div class="service-card-icon">
-              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-            </div>
-            <h3 class="service-card-title">Career Guidance</h3>
-          </div>
-          <p class="service-card-desc">Get support with resume building, LinkedIn optimization, internship preparation, placement readiness, and career planning.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo">
-            <img src="assets/logo.jpg" alt="Compile Journey Logo" class="logo-icon-img">
+            <img src="assets/logo.jpg" alt="Compile Journey Logo" class="logo-icon-img" loading="lazy">
             <span class="text-gradient">Compile Journey</span>
           </a>
           <p class="footer-desc">Empowering students and aspiring developers to master programming, explore tech fields, and launch careers.</p>
@@ -174,8 +180,8 @@
         <div>
           <h4 class="footer-title">Socials</h4>
           <ul class="footer-links">
-            <li><a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile (opens in a new tab)">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile (opens in a new tab)">LinkedIn</a></li>
             <li><a href="contact.html">Instagram</a></li>
           </ul>
         </div>
@@ -184,10 +190,10 @@
       <div class="footer-bottom">
         <span class="footer-copyright">&copy; 2026 Compile Journey. All rights reserved. Created by Abikrishna.</span>
         <div class="footer-socials">
-          <a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub Profile">
+          <a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub Profile (opens in a new tab)">
             <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
           </a>
-          <a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn Profile">
+          <a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn Profile (opens in a new tab)">
             <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
           </a>
         </div>
@@ -200,7 +206,7 @@
     <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
   </button>
 
-  <!-- Shared Javascript main -->
-  <script src="js/main.js"></script>
+  <!-- Shared Javascript loaders -->
+  <script src="js/global.js"></script>
 </body>
 </html>

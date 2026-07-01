@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Compile Journey | Where Curiosity Compiles Creativity</title>
   <meta name="description" content="Welcome to Compile Journey, a platform dedicated to helping students and aspiring developers learn, grow, and achieve their career goals.">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="author" content="Abikrishna">
+  <meta name="keywords" content="Compile Journey, learn programming, student roadmaps, developer weather dashboard, task tracker, Web Development, Data Science, AI ML, DSA">
+  <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
   <script>
@@ -17,8 +21,8 @@
   </script>
 
   <!-- HEADER -->
-  <header class="header">
-    <div class="container nav-container">
+  <header class="header" role="banner">
+    <nav class="container nav-container" aria-label="Main Navigation">
       <a href="index.html" class="logo">
         <img src="assets/logo.jpg" alt="Compile Journey Logo" class="logo-icon-img">
         <div style="display:flex; flex-direction:column; line-height:1.1;">
@@ -34,28 +38,28 @@
         </button>
 
         <!-- Floating Customizer Panel -->
-        <div class="glass-card customizer-panel" id="theme-customizer-panel">
+        <div class="glass-card customizer-panel" id="theme-customizer-panel" role="radiogroup" aria-label="Theme Customizer Options">
           <div class="customizer-section">
             <span class="customizer-title">Choose Background</span>
             <div class="color-options">
-              <button class="color-circle bg-opt" data-bg="obsidian" style="background-color: #05070f; border: 1px solid rgba(255,255,255,0.15);" title="Obsidian Dark" aria-label="Obsidian Dark"></button>
-              <button class="color-circle bg-opt" data-bg="midnight" style="background-color: #060814; border: 1px solid rgba(255,255,255,0.15);" title="Midnight Blue" aria-label="Midnight Blue"></button>
-              <button class="color-circle bg-opt" data-bg="sepia" style="background-color: #f8f3e6; border: 1px solid rgba(0,0,0,0.1);" title="Sepia Cream" aria-label="Sepia Cream"></button>
-              <button class="color-circle bg-opt" data-bg="light" style="background-color: #f8fafc; border: 1px solid rgba(0,0,0,0.1);" title="Professional Light" aria-label="Professional Light"></button>
+              <button class="color-circle bg-opt" data-bg="obsidian" style="background-color: #05070f; border: 1px solid rgba(255,255,255,0.15);" title="Obsidian Dark" aria-label="Obsidian Dark background" role="radio" aria-checked="false"></button>
+              <button class="color-circle bg-opt" data-bg="midnight" style="background-color: #060814; border: 1px solid rgba(255,255,255,0.15);" title="Midnight Blue" aria-label="Midnight Blue background" role="radio" aria-checked="false"></button>
+              <button class="color-circle bg-opt" data-bg="sepia" style="background-color: #f8f3e6; border: 1px solid rgba(0,0,0,0.1);" title="Sepia Cream" aria-label="Sepia Cream background" role="radio" aria-checked="false"></button>
+              <button class="color-circle bg-opt" data-bg="light" style="background-color: #f8fafc; border: 1px solid rgba(0,0,0,0.1);" title="Professional Light" aria-label="Professional Light background" role="radio" aria-checked="false"></button>
             </div>
           </div>
           <div class="customizer-section">
             <span class="customizer-title">Choose Accent</span>
             <div class="color-options">
-              <button class="color-circle acc-opt" data-acc="cyan" style="background-color: #00f2fe;" title="Cyber Cyan" aria-label="Cyber Cyan"></button>
-              <button class="color-circle acc-opt" data-acc="magenta" style="background-color: #e100ff;" title="Neon Magenta" aria-label="Neon Magenta"></button>
-              <button class="color-circle acc-opt" data-acc="emerald" style="background-color: #10b981;" title="Forest Emerald" aria-label="Forest Emerald"></button>
-              <button class="color-circle acc-opt" data-acc="amber" style="background-color: #f59e0b;" title="Solar Amber" aria-label="Solar Amber"></button>
+              <button class="color-circle acc-opt" data-acc="cyan" style="background-color: #00f2fe;" title="Cyber Cyan" aria-label="Cyber Cyan Accent" role="radio" aria-checked="false"></button>
+              <button class="color-circle acc-opt" data-acc="magenta" style="background-color: #e100ff;" title="Neon Magenta" aria-label="Neon Magenta Accent" role="radio" aria-checked="false"></button>
+              <button class="color-circle acc-opt" data-acc="emerald" style="background-color: #10b981;" title="Forest Emerald" aria-label="Forest Emerald Accent" role="radio" aria-checked="false"></button>
+              <button class="color-circle acc-opt" data-acc="amber" style="background-color: #f59e0b;" title="Solar Amber" aria-label="Solar Amber Accent" role="radio" aria-checked="false"></button>
             </div>
           </div>
         </div>
 
-        <button class="mobile-menu-btn" id="mobile-menu-trigger" aria-label="Toggle Navigation Menu">
+        <button class="mobile-menu-btn" id="mobile-menu-trigger" aria-label="Toggle Navigation Menu" aria-expanded="false">
           <svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
       </div>
@@ -67,154 +71,156 @@
         <li><a href="workspace.html" class="nav-link">Workspace</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
-    </div>
+    </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <span class="hero-tagline">Welcome to Compile Journey</span>
-        <h1 class="hero-title">Where Curiosity<br><span class="text-gradient">Compiles Creativity</span></h1>
-        <p class="hero-desc">Compile Journey is a platform dedicated to helping students and aspiring developers learn, grow, and achieve their career goals. Explore structured roadmaps, practical projects, and valuable resources designed to transform curiosity into real-world skills.</p>
-        <button class="btn btn-primary" data-open-modal>
-          Start Learning
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </button>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-logo-container">
-          <img src="assets/logo.jpg" alt="Compile Journey Logo" class="hero-logo-img">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURED LEARNING PATHS -->
-  <section class="paths-section" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Paths</span>
-        <h2 class="section-title">Featured Learning Paths</h2>
-        <p class="section-subtitle">Explore carefully curated, comprehensive roadmaps designed to help you specialize in core technical fields.</p>
-      </div>
-
-      <div class="paths-slider-container">
-        <div class="paths-slider">
-          <button class="slider-arrow prev" aria-label="Previous Slide">
-            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
-          </button>
-
-          <!-- AI & ML Card -->
-          <div class="glass-card path-card path-slide active">
-            <div class="path-card-icon">
-              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
-            </div>
-            <h3 class="path-card-title">Artificial Intelligence & Machine Learning</h3>
-            <p class="path-card-desc">Learn the fundamentals of AI, Machine Learning, Deep Learning, and Generative AI through structured learning paths and practical projects.</p>
-          </div>
-
-          <!-- Data Science Card -->
-          <div class="glass-card path-card purple path-slide next-slide">
-            <div class="path-card-icon">
-              <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-            </div>
-            <h3 class="path-card-title">Data Science</h3>
-            <p class="path-card-desc">Master data analysis, visualization, statistics, Python, SQL, and machine learning techniques used by industry professionals.</p>
-          </div>
-
-          <!-- Web Development Card -->
-          <div class="glass-card path-card emerald path-slide hidden-slide">
-            <div class="path-card-icon">
-              <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-            </div>
-            <h3 class="path-card-title">Web Development</h3>
-            <p class="path-card-desc">Build modern websites and web applications using HTML, CSS, JavaScript, React, and backend technologies.</p>
-          </div>
-
-          <!-- DSA Card -->
-          <div class="glass-card path-card amber path-slide prev-slide">
-            <div class="path-card-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
-            </div>
-            <h3 class="path-card-title">Data Structures & Algorithms</h3>
-            <p class="path-card-desc">Strengthen your problem-solving skills and prepare for technical interviews with comprehensive DSA learning resources.</p>
-          </div>
-
-          <button class="slider-arrow next" aria-label="Next Slide">
-            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+  <main id="main-content">
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="hero-tagline">Welcome to Compile Journey</span>
+          <h1 class="hero-title">Where Curiosity<br><span class="text-gradient">Compiles Creativity</span></h1>
+          <p class="hero-desc">Compile Journey is a platform dedicated to helping students and aspiring developers learn, grow, and achieve their career goals. Explore structured roadmaps, practical projects, and valuable resources designed to transform curiosity into real-world skills.</p>
+          <button class="btn btn-primary" data-open-modal>
+            Start Learning
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </button>
         </div>
-
-        <div class="slider-dots"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE SECTION -->
-  <section class="why-section">
-    <div class="container">
-      <!-- Animated Statistics Counters Banner -->
-      <div class="glass-card" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-xl); text-align:center; margin-bottom: var(--space-xxl); padding: var(--space-xl) var(--space-lg);">
-        <div class="stat-box">
-          <div class="why-number" style="margin-bottom:0;"><span class="stat-number" data-target="5000">0</span>+</div>
-          <p class="text-muted" style="font-weight:700; font-size:0.95rem; text-transform:uppercase; letter-spacing:0.5px;">Active Students</p>
-        </div>
-        <div class="stat-box" style="border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color);">
-          <div class="why-number" style="margin-bottom:0;"><span class="stat-number" data-target="50">0</span>+</div>
-          <p class="text-muted" style="font-weight:700; font-size:0.95rem; text-transform:uppercase; letter-spacing:0.5px;">Learning Roadmaps</p>
-        </div>
-        <div class="stat-box">
-          <div class="why-number" style="margin-bottom:0;"><span class="stat-number" data-target="100">0</span>+</div>
-          <p class="text-muted" style="font-weight:700; font-size:0.95rem; text-transform:uppercase; letter-spacing:0.5px;">Practical Projects</p>
+        <div class="hero-visual">
+          <div class="hero-logo-container">
+            <img src="assets/logo.jpg" alt="Compile Journey Logo" class="hero-logo-img">
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="section-header">
-        <span class="section-tag">Value</span>
-        <h2 class="section-title">Why Choose Compile Journey?</h2>
-        <p class="section-subtitle">We bridge the gap between academic theory and industry reality through our core philosophy.</p>
+    <!-- FEATURED LEARNING PATHS -->
+    <section class="paths-section" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Paths</span>
+          <h2 class="section-title">Featured Learning Paths</h2>
+          <p class="section-subtitle">Explore carefully curated, comprehensive roadmaps designed to help you specialize in core technical fields.</p>
+        </div>
+
+        <div class="paths-slider-container">
+          <div class="paths-slider">
+            <button class="slider-arrow prev" aria-label="Previous Slide">
+              <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+
+            <!-- AI & ML Card -->
+            <div class="glass-card path-card path-slide active">
+              <div class="path-card-icon">
+                <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              </div>
+              <h3 class="path-card-title">Artificial Intelligence & Machine Learning</h3>
+              <p class="path-card-desc">Learn the fundamentals of AI, Machine Learning, Deep Learning, and Generative AI through structured learning paths and practical projects.</p>
+            </div>
+
+            <!-- Data Science Card -->
+            <div class="glass-card path-card purple path-slide next-slide">
+              <div class="path-card-icon">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              </div>
+              <h3 class="path-card-title">Data Science</h3>
+              <p class="path-card-desc">Master data analysis, visualization, statistics, Python, SQL, and machine learning techniques used by industry professionals.</p>
+            </div>
+
+            <!-- Web Development Card -->
+            <div class="glass-card path-card emerald path-slide hidden-slide">
+              <div class="path-card-icon">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              </div>
+              <h3 class="path-card-title">Web Development</h3>
+              <p class="path-card-desc">Build modern websites and web applications using HTML, CSS, JavaScript, React, and backend technologies.</p>
+            </div>
+
+            <!-- DSA Card -->
+            <div class="glass-card path-card amber path-slide prev-slide">
+              <div class="path-card-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+              </div>
+              <h3 class="path-card-title">Data Structures & Algorithms</h3>
+              <p class="path-card-desc">Strengthen your problem-solving skills and prepare for technical interviews with comprehensive DSA learning resources.</p>
+            </div>
+
+            <button class="slider-arrow next" aria-label="Next Slide">
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+
+          <div class="slider-dots"></div>
+        </div>
       </div>
+    </section>
 
-      <div class="why-grid">
-        <!-- 1. Structured Learning -->
-        <div class="why-card">
-          <div class="why-number">01</div>
-          <h3 class="why-card-title">Structured Learning</h3>
-          <p class="why-card-desc">Follow step-by-step roadmaps designed for beginners and advanced learners.</p>
+    <!-- WHY CHOOSE SECTION -->
+    <section class="why-section">
+      <div class="container">
+        <!-- Animated Statistics Counters Banner -->
+        <div class="glass-card" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-xl); text-align:center; margin-bottom: var(--space-xxl); padding: var(--space-xl) var(--space-lg);">
+          <div class="stat-box">
+            <div class="why-number" style="margin-bottom:0;"><span class="stat-number" data-target="5000">0</span>+</div>
+            <p class="text-muted" style="font-weight:700; font-size:0.95rem; text-transform:uppercase; letter-spacing:0.5px;">Active Students</p>
+          </div>
+          <div class="stat-box" style="border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color);">
+            <div class="why-number" style="margin-bottom:0;"><span class="stat-number" data-target="50">0</span>+</div>
+            <p class="text-muted" style="font-weight:700; font-size:0.95rem; text-transform:uppercase; letter-spacing:0.5px;">Learning Roadmaps</p>
+          </div>
+          <div class="stat-box">
+            <div class="why-number" style="margin-bottom:0;"><span class="stat-number" data-target="100">0</span>+</div>
+            <p class="text-muted" style="font-weight:700; font-size:0.95rem; text-transform:uppercase; letter-spacing:0.5px;">Practical Projects</p>
+          </div>
         </div>
 
-        <!-- 2. Practical Projects -->
-        <div class="why-card">
-          <div class="why-number">02</div>
-          <h3 class="why-card-title">Practical Projects</h3>
-          <p class="why-card-desc">Apply your knowledge by building real-world projects and strengthening your portfolio.</p>
+        <div class="section-header">
+          <span class="section-tag">Value</span>
+          <h2 class="section-title">Why Choose Compile Journey?</h2>
+          <p class="section-subtitle">We bridge the gap between academic theory and industry reality through our core philosophy.</p>
         </div>
 
-        <!-- 3. Career Guidance -->
-        <div class="why-card">
-          <div class="why-number">03</div>
-          <h3 class="why-card-title">Career Guidance</h3>
-          <p class="why-card-desc">Receive guidance on resumes, LinkedIn optimization, internships, and placement preparation.</p>
-        </div>
+        <div class="why-grid">
+          <!-- 1. Structured Learning -->
+          <div class="why-card">
+            <div class="why-number">01</div>
+            <h3 class="why-card-title">Structured Learning</h3>
+            <p class="why-card-desc">Follow step-by-step roadmaps designed for beginners and advanced learners.</p>
+          </div>
 
-        <!-- 4. Continuous Growth -->
-        <div class="why-card">
-          <div class="why-number">04</div>
-          <h3 class="why-card-title">Continuous Growth</h3>
-          <p class="why-card-desc">Stay updated with the latest technologies, trends, and learning opportunities.</p>
+          <!-- 2. Practical Projects -->
+          <div class="why-card">
+            <div class="why-number">02</div>
+            <h3 class="why-card-title">Practical Projects</h3>
+            <p class="why-card-desc">Apply your knowledge by building real-world projects and strengthening your portfolio.</p>
+          </div>
+
+          <!-- 3. Career Guidance -->
+          <div class="why-card">
+            <div class="why-number">03</div>
+            <h3 class="why-card-title">Career Guidance</h3>
+            <p class="why-card-desc">Receive guidance on resumes, LinkedIn optimization, internships, and placement preparation.</p>
+          </div>
+
+          <!-- 4. Continuous Growth -->
+          <div class="why-card">
+            <div class="why-number">04</div>
+            <h3 class="why-card-title">Continuous Growth</h3>
+            <p class="why-card-desc">Stay updated with the latest technologies, trends, and learning opportunities.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo">
-            <img src="assets/logo.jpg" alt="Compile Journey Logo" class="logo-icon-img">
+            <img src="assets/logo.jpg" alt="Compile Journey Logo" class="logo-icon-img" loading="lazy">
             <span class="text-gradient">Compile Journey</span>
           </a>
           <p class="footer-desc">Empowering students and aspiring developers to master programming, explore tech fields, and launch careers.</p>
@@ -233,8 +239,8 @@
         <div>
           <h4 class="footer-title">Socials</h4>
           <ul class="footer-links">
-            <li><a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile (opens in a new tab)">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile (opens in a new tab)">LinkedIn</a></li>
             <li><a href="contact.html">Instagram</a></li>
           </ul>
         </div>
@@ -243,10 +249,10 @@
       <div class="footer-bottom">
         <span class="footer-copyright">&copy; 2026 Compile Journey. All rights reserved. Created by Abikrishna.</span>
         <div class="footer-socials">
-          <a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub Profile">
+          <a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub Profile (opens in a new tab)">
             <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
           </a>
-          <a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn Profile">
+          <a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn Profile (opens in a new tab)">
             <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
           </a>
         </div>
@@ -260,10 +266,10 @@
   </button>
 
   <!-- INTERACTIVE MODAL DIALOG POPUP -->
-  <div class="modal-overlay" id="info-modal">
+  <div class="modal-overlay" id="info-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title-id">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title">Get Started with Compile Journey</h3>
+        <h3 class="modal-title" id="modal-title-id">Get Started with Compile Journey</h3>
         <button class="modal-close-btn" aria-label="Close Modal">
           <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
@@ -279,13 +285,14 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-secondary modal-close-btn">Close Info</button>
+        <button class="btn btn-secondary modal-close-btn" aria-label="Dismiss Modal Info">Close Info</button>
         <a href="services.html" class="btn btn-primary">Go to Roadmaps</a>
       </div>
     </div>
   </div>
 
-  <!-- Shared Javascript main -->
-  <script src="js/main.js"></script>
+  <!-- Shared Javascript loaders -->
+  <script src="js/global.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>

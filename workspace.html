@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Workspace | Compile Journey</title>
   <meta name="description" content="Query real-time weather information and track your academic progress or projects in one persistent dashboard.">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="author" content="Abikrishna">
+  <meta name="keywords" content="Compile Journey, learn programming, student roadmaps, developer weather dashboard, task tracker, Web Development, Data Science, AI ML, DSA">
+  <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/workspace.css">
 </head>
 <body>
   <script>
@@ -17,8 +21,8 @@
   </script>
 
   <!-- HEADER -->
-  <header class="header">
-    <div class="container nav-container">
+  <header class="header" role="banner">
+    <nav class="container nav-container" aria-label="Main Navigation">
       <a href="index.html" class="logo">
         <img src="assets/logo.jpg" alt="Compile Journey Logo" class="logo-icon-img">
         <div style="display:flex; flex-direction:column; line-height:1.1;">
@@ -34,28 +38,28 @@
         </button>
 
         <!-- Floating Customizer Panel -->
-        <div class="glass-card customizer-panel" id="theme-customizer-panel">
+        <div class="glass-card customizer-panel" id="theme-customizer-panel" role="radiogroup" aria-label="Theme Customizer Options">
           <div class="customizer-section">
             <span class="customizer-title">Choose Background</span>
             <div class="color-options">
-              <button class="color-circle bg-opt" data-bg="obsidian" style="background-color: #05070f; border: 1px solid rgba(255,255,255,0.15);" title="Obsidian Dark" aria-label="Obsidian Dark"></button>
-              <button class="color-circle bg-opt" data-bg="midnight" style="background-color: #060814; border: 1px solid rgba(255,255,255,0.15);" title="Midnight Blue" aria-label="Midnight Blue"></button>
-              <button class="color-circle bg-opt" data-bg="sepia" style="background-color: #f8f3e6; border: 1px solid rgba(0,0,0,0.1);" title="Sepia Cream" aria-label="Sepia Cream"></button>
-              <button class="color-circle bg-opt" data-bg="light" style="background-color: #f8fafc; border: 1px solid rgba(0,0,0,0.1);" title="Professional Light" aria-label="Professional Light"></button>
+              <button class="color-circle bg-opt" data-bg="obsidian" style="background-color: #05070f; border: 1px solid rgba(255,255,255,0.15);" title="Obsidian Dark" aria-label="Obsidian Dark background" role="radio" aria-checked="false"></button>
+              <button class="color-circle bg-opt" data-bg="midnight" style="background-color: #060814; border: 1px solid rgba(255,255,255,0.15);" title="Midnight Blue" aria-label="Midnight Blue background" role="radio" aria-checked="false"></button>
+              <button class="color-circle bg-opt" data-bg="sepia" style="background-color: #f8f3e6; border: 1px solid rgba(0,0,0,0.1);" title="Sepia Cream" aria-label="Sepia Cream background" role="radio" aria-checked="false"></button>
+              <button class="color-circle bg-opt" data-bg="light" style="background-color: #f8fafc; border: 1px solid rgba(0,0,0,0.1);" title="Professional Light" aria-label="Professional Light background" role="radio" aria-checked="false"></button>
             </div>
           </div>
           <div class="customizer-section">
             <span class="customizer-title">Choose Accent</span>
             <div class="color-options">
-              <button class="color-circle acc-opt" data-acc="cyan" style="background-color: #00f2fe;" title="Cyber Cyan" aria-label="Cyber Cyan"></button>
-              <button class="color-circle acc-opt" data-acc="magenta" style="background-color: #e100ff;" title="Neon Magenta" aria-label="Neon Magenta"></button>
-              <button class="color-circle acc-opt" data-acc="emerald" style="background-color: #10b981;" title="Forest Emerald" aria-label="Forest Emerald"></button>
-              <button class="color-circle acc-opt" data-acc="amber" style="background-color: #f59e0b;" title="Solar Amber" aria-label="Solar Amber"></button>
+              <button class="color-circle acc-opt" data-acc="cyan" style="background-color: #00f2fe;" title="Cyber Cyan" aria-label="Cyber Cyan Accent" role="radio" aria-checked="false"></button>
+              <button class="color-circle acc-opt" data-acc="magenta" style="background-color: #e100ff;" title="Neon Magenta" aria-label="Neon Magenta Accent" role="radio" aria-checked="false"></button>
+              <button class="color-circle acc-opt" data-acc="emerald" style="background-color: #10b981;" title="Forest Emerald" aria-label="Forest Emerald Accent" role="radio" aria-checked="false"></button>
+              <button class="color-circle acc-opt" data-acc="amber" style="background-color: #f59e0b;" title="Solar Amber" aria-label="Solar Amber Accent" role="radio" aria-checked="false"></button>
             </div>
           </div>
         </div>
 
-        <button class="mobile-menu-btn" id="mobile-menu-trigger" aria-label="Toggle Navigation Menu">
+        <button class="mobile-menu-btn" id="mobile-menu-trigger" aria-label="Toggle Navigation Menu" aria-expanded="false">
           <svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
       </div>
@@ -67,90 +71,92 @@
         <li><a href="workspace.html" class="nav-link active">Workspace</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
-    </div>
+    </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="services-hero" style="padding: var(--space-xl) 0 var(--space-lg) 0;">
-    <div class="container">
-      <div class="section-header" style="margin-bottom: var(--space-lg);">
-        <span class="section-tag">Workspace</span>
-        <h1 class="section-title">Developer Workspace</h1>
-        <p class="section-subtitle">An integrated suite of productivity tools for engineering students. Check the current weather and track your daily learning milestones.</p>
+  <main id="main-content">
+    <!-- HERO SECTION -->
+    <section class="services-hero" style="padding: var(--space-xl) 0 var(--space-lg) 0;">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: var(--space-lg);">
+          <span class="section-tag">Workspace</span>
+          <h1 class="section-title">Developer Workspace</h1>
+          <p class="section-subtitle">An integrated suite of productivity tools for engineering students. Check the current weather and track your daily learning milestones.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- WORKSPACE GRID SECTION -->
-  <section style="padding: 0 0 var(--space-xxl) 0;">
-    <div class="container">
-      <div class="workspace-grid">
-        
-        <!-- COLUMN 1: WEATHER DASHBOARD -->
-        <div class="glass-card" style="padding: var(--space-xl);">
-          <h2 class="path-card-title" style="margin-bottom: 4px; display:flex; align-items:center; gap:var(--space-sm);">
-            Weather Dashboard
-          </h2>
-          <p class="text-muted" style="font-size: 0.9rem; margin-bottom: var(--space-lg);">Query live conditions to optimize your work schedule.</p>
+    <!-- WORKSPACE GRID SECTION -->
+    <section style="padding: 0 0 var(--space-xxl) 0;">
+      <div class="container">
+        <div class="workspace-grid">
           
-          <!-- Search Form -->
-          <div class="widget-form">
-            <input type="text" id="weather-city-input" class="widget-input" placeholder="Type city (e.g., Tokyo, New York)..." aria-label="City Name">
-            <button id="weather-search-btn" class="widget-btn" aria-label="Search Weather">
-              <span>Search</span>
-              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            </button>
-          </div>
+          <!-- COLUMN 1: WEATHER DASHBOARD -->
+          <div class="glass-card" style="padding: var(--space-xl);">
+            <h2 class="path-card-title" style="margin-bottom: 4px; display:flex; align-items:center; gap:var(--space-sm);">
+              Weather Dashboard
+            </h2>
+            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: var(--space-lg);">Query live conditions to optimize your work schedule.</p>
+            
+            <!-- Search Form -->
+            <div class="widget-form">
+              <input type="text" id="weather-city-input" class="widget-input" placeholder="Type city (e.g., Tokyo, New York)..." aria-label="City Name">
+              <button id="weather-search-btn" class="widget-btn" aria-label="Search Weather">
+                <span>Search</span>
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </button>
+            </div>
 
-          <!-- Weather Info Display Area -->
-          <div id="weather-display-area">
-            <!-- Loading state or dynamically loaded content will appear here -->
-            <div class="todo-item-empty">
-              <svg viewBox="0 0 24 24"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path><circle cx="12" cy="12" r="4"></circle></svg>
-              <p>Type a city and click Search to fetch live conditions.</p>
+            <!-- Weather Info Display Area -->
+            <div id="weather-display-area">
+              <!-- Loading state or dynamically loaded content will appear here -->
+              <div class="todo-item-empty">
+                <svg viewBox="0 0 24 24"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path><circle cx="12" cy="12" r="4"></circle></svg>
+                <p>Type a city and click Search to fetch live conditions.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- COLUMN 2: STUDENT TASK TRACKER -->
-        <div class="glass-card" style="padding: var(--space-xl);">
-          <h2 class="path-card-title" style="margin-bottom: 4px;">
-            Goal & Task Tracker
-          </h2>
-          <p class="text-muted" style="font-size: 0.9rem; margin-bottom: var(--space-lg);">Manage and compile your learning milestones persistently.</p>
+          <!-- COLUMN 2: STUDENT TASK TRACKER -->
+          <div class="glass-card" style="padding: var(--space-xl);">
+            <h2 class="path-card-title" style="margin-bottom: 4px;">
+              Goal & Task Tracker
+            </h2>
+            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: var(--space-lg);">Manage and compile your learning milestones persistently.</p>
 
-          <!-- Add Task Form -->
-          <div class="widget-form">
-            <input type="text" id="todo-task-input" class="widget-input" placeholder="Add a new milestone (e.g., Write API routes)..." aria-label="New Task">
-            <button id="todo-add-btn" class="widget-btn" aria-label="Add Task">
-              <span>Add</span>
-              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-            </button>
+            <!-- Add Task Form -->
+            <div class="widget-form">
+              <input type="text" id="todo-task-input" class="widget-input" placeholder="Add a new milestone (e.g., Write API routes)..." aria-label="New Task">
+              <button id="todo-add-btn" class="widget-btn" aria-label="Add Task">
+                <span>Add</span>
+                <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="todo-filters" role="tablist" aria-label="Task Filters">
+              <button id="todo-filter-all" class="todo-filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-controls="todo-list-container">All Tasks</button>
+              <button id="todo-filter-active" class="todo-filter-btn" data-filter="active" role="tab" aria-selected="false" aria-controls="todo-list-container">Active</button>
+              <button id="todo-filter-completed" class="todo-filter-btn" data-filter="completed" role="tab" aria-selected="false" aria-controls="todo-list-container">Completed</button>
+            </div>
+
+            <!-- Task list -->
+            <ul id="todo-list-container" class="todo-list" aria-live="polite">
+              <!-- Items populated dynamically -->
+            </ul>
           </div>
 
-          <!-- Filter Tabs -->
-          <div class="todo-filters">
-            <button id="todo-filter-all" class="todo-filter-btn active" data-filter="all">All Tasks</button>
-            <button id="todo-filter-active" class="todo-filter-btn" data-filter="active">Active</button>
-            <button id="todo-filter-completed" class="todo-filter-btn" data-filter="completed">Completed</button>
-          </div>
-
-          <!-- Task list -->
-          <ul id="todo-list-container" class="todo-list">
-            <!-- Items populated dynamically -->
-          </ul>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="logo" style="margin-bottom: var(--space-md);">
-          <img src="assets/logo.jpg" alt="Compile Journey Logo" class="logo-icon-img">
+          <img src="assets/logo.jpg" alt="Compile Journey Logo" class="logo-icon-img" loading="lazy">
           <span class="text-gradient">Compile Journey</span>
         </a>
         <p class="footer-desc">Supporting technology students and developers with structured study tracks, project references, and career mapping guidance.</p>
@@ -181,8 +187,8 @@
         <div>
           <h4 class="footer-title">Socials</h4>
           <ul class="footer-links">
-            <li><a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile (opens in a new tab)">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile (opens in a new tab)">LinkedIn</a></li>
             <li><a href="contact.html">Instagram</a></li>
           </ul>
         </div>
@@ -191,10 +197,10 @@
       <div class="footer-bottom">
         <span class="footer-copyright">&copy; 2026 Compile Journey. All rights reserved. Created by Abikrishna.</span>
         <div class="footer-socials">
-          <a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub Profile">
+          <a href="https://github.com/Abikrishna2004" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub Profile (opens in a new tab)">
             <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
           </a>
-          <a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn Profile">
+          <a href="https://www.linkedin.com/in/abikrishna-p-21195b304" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn Profile (opens in a new tab)">
             <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
           </a>
         </div>
@@ -208,10 +214,10 @@
   </button>
 
   <!-- INTERACTIVE MODAL DIALOG POPUP -->
-  <div class="modal-overlay" id="info-modal">
+  <div class="modal-overlay" id="info-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title-id">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title">Get Started with Compile Journey</h3>
+        <h3 class="modal-title" id="modal-title-id">Get Started with Compile Journey</h3>
         <button class="modal-close-btn" aria-label="Close Modal">
           <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
@@ -227,13 +233,14 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-secondary modal-close-btn">Close Info</button>
+        <button class="btn btn-secondary modal-close-btn" aria-label="Dismiss Modal Info">Close Info</button>
         <a href="services.html" class="btn btn-primary">Go to Roadmaps</a>
       </div>
     </div>
   </div>
 
-  <!-- Shared Javascript main -->
-  <script src="js/main.js"></script>
+  <!-- Shared Javascript loaders -->
+  <script src="js/global.js"></script>
+  <script src="js/workspace.js"></script>
 </body>
 </html>
