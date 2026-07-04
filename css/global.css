@@ -843,6 +843,15 @@ body.bg-light .theme-btn:hover, body.bg-sepia .theme-btn:hover {
    7. MOBILE RESPONSIVE ADAPTATIONS
    ========================================================================== */
 @media (max-width: 768px) {
+  :root {
+    --space-xl: 1.5rem;
+    --space-xxl: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
   .header {
     background: var(--bg-primary);
   }
@@ -878,5 +887,13 @@ body.bg-light .theme-btn:hover, body.bg-sepia .theme-btn:hover {
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .customizer-panel {
+    right: -10px;
+    width: 250px;
+    max-width: calc(100vw - 32px);
   }
 }

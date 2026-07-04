@@ -161,6 +161,12 @@ body.bg-light .weather-icon-container, body.bg-sepia .weather-icon-container {
   border-top: 1px solid var(--border-color);
 }
 
+@media (max-width: 480px) {
+  .weather-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .weather-detail-item {
   display: flex;
   align-items: center;

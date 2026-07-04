@@ -145,7 +145,12 @@
   }
   
   .founder-avatar-frame {
-    max-width: 320px;
+    max-width: 100%;
+    width: 280px;
     margin: 0 auto;
+  }
+
+  .founder-avatar {
+    height: 280px;
   }
 }

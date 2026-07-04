@@ -155,3 +155,9 @@
     gap: var(--space-xl);
   }
 }
+
+@media (max-width: 480px) {
+  .form-card {
+    padding: var(--space-md);
+  }
+}
