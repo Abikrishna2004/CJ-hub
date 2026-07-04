@@ -153,6 +153,62 @@
         </div>
       </div>
     </section>
+
+    <!-- INTERACTIVE LEARNING HUB -->
+    <section class="learning-hub-section" id="learn-coding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Interactive Syllabus</span>
+          <h2 class="section-title">💻 Learn Coding</h2>
+          <p class="section-subtitle">Select a technology to explore structured learning paths, study notes, cheat sheets, practice problems, and mini projects.</p>
+        </div>
+
+        <div class="learning-hub-grid">
+          <!-- Left Column: Language Selection Tabs -->
+          <div class="lang-tabs-container" id="lang-tabs" role="tablist" aria-label="Coding Languages">
+            <!-- Dynamically populated by JS -->
+          </div>
+
+          <!-- Right Column: Modules Explorer -->
+          <div class="modules-explorer-container">
+            <div class="modules-grid" id="modules-grid">
+              <!-- Dynamically populated by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Learning Syllabus Modal -->
+    <div class="modal-overlay" id="learning-modal" role="dialog" aria-modal="true" aria-labelledby="modal-lang-title">
+      <div class="glass-card modal-container">
+        <button class="modal-close-btn" id="learning-modal-close" aria-label="Close Modal">
+          <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        
+        <div class="modal-header">
+          <span class="modal-tag" id="modal-lang-title">Python</span>
+          <h3 class="modal-title" id="modal-module-title">Beginner Fundamentals</h3>
+        </div>
+        
+        <!-- Inner Modal Tabs -->
+        <div class="modal-tabs-wrapper">
+          <div class="modal-tab-headers" role="tablist" aria-label="Syllabus Sections">
+            <button class="modal-tab-btn active" data-tab-target="pane-notes" role="tab" aria-selected="true">Notes</button>
+            <button class="modal-tab-btn" data-tab-target="pane-cheat" role="tab" aria-selected="false">Cheat Sheet</button>
+            <button class="modal-tab-btn" data-tab-target="pane-practice" role="tab" aria-selected="false">Practice Problems</button>
+            <button class="modal-tab-btn" data-tab-target="pane-projects" role="tab" aria-selected="false">Mini Projects</button>
+          </div>
+          
+          <div class="modal-tab-content">
+            <div class="modal-tab-pane active" id="pane-notes" role="tabpanel"></div>
+            <div class="modal-tab-pane" id="pane-cheat" role="tabpanel"></div>
+            <div class="modal-tab-pane" id="pane-practice" role="tabpanel"></div>
+            <div class="modal-tab-pane" id="pane-projects" role="tabpanel"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- FOOTER -->
@@ -208,5 +264,6 @@
 
   <!-- Shared Javascript loaders -->
   <script src="js/global.js?v=1.0.5" defer></script>
+  <script src="js/services.js?v=1.0.5" defer></script>
 </body>
 </html>

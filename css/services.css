@@ -52,13 +52,385 @@
   line-height: 1.6;
 }
 
-/* Custom adjustments for study roadmaps detail grids if present */
-.services-hero {
-  text-align: center;
+/* ==========================================================================
+   INTERACTIVE LEARNING HUB EXPLORER
+   ========================================================================== */
+
+.learning-hub-section {
+  border-top: 1px solid var(--border-color);
+  padding: var(--space-xxl) 0;
+  position: relative;
+}
+
+.learning-hub-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+  align-items: start;
+}
+
+/* Sidebar Language Tabs Selector */
+.lang-tabs-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  position: sticky;
+  top: 100px;
+  z-index: 10;
+}
+
+.lang-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.lang-tab-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--text-secondary);
+  transition: fill var(--transition-fast);
+}
+
+.lang-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+  transform: translateX(4px);
+}
+
+.lang-tab-btn:hover svg {
+  fill: var(--text-primary);
+}
+
+/* Active State matches accent colors */
+.lang-tab-btn.active {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--accent-color, var(--color-cyan));
+  color: var(--accent-color, var(--color-cyan));
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.lang-tab-btn.active svg {
+  fill: var(--accent-color, var(--color-cyan));
+}
+
+/* Modules Grid Explorer */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  transition: opacity var(--transition-normal) ease;
+}
+
+.module-card {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  height: 100%;
+  cursor: pointer;
+  transition: transform var(--transition-fast) ease, border var(--transition-fast) ease;
+}
+
+.module-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color, var(--color-cyan));
+}
+
+.module-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.module-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.module-card-action {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-color, var(--color-cyan));
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: var(--space-sm);
+}
+
+.module-card-action svg {
+  transition: transform var(--transition-fast);
+}
+
+.module-card:hover .module-card-action svg {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   SYLLABUS DETAILED MODAL STYLES
+   ========================================================================== */
+
+.modal-container {
+  width: 90%;
+  max-width: 760px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 !important;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  animation: modalPop 0.3s ease-out forwards;
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition-fast);
+}
+
+.modal-close-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  transform: rotate(90deg);
+}
+
+.modal-header {
+  padding: 30px 40px 15px 40px;
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.005);
+}
+
+.modal-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-color, var(--color-cyan));
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+/* Modal Inner Tabbed Navigation */
+.modal-tabs-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.modal-tab-headers {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.005);
+  padding: 0 40px;
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.modal-tab-headers::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.modal-tab-btn {
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition-fast);
+}
+
+.modal-tab-btn:hover {
+  color: var(--text-primary);
+}
+
+.modal-tab-btn.active {
+  color: var(--accent-color, var(--color-cyan));
+  border-bottom-color: var(--accent-color, var(--color-cyan));
+}
+
+.modal-tab-content {
+  padding: 30px 40px;
+  overflow-y: auto;
+  flex-grow: 1;
+  max-height: calc(85vh - 170px);
+}
+
+.modal-tab-pane {
+  display: none;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-tab-pane.active {
+  display: block;
+}
+
+/* Syllabus content styles */
+.modal-tab-pane h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.modal-tab-pane h4:not(:first-child) {
+  margin-top: 24px;
+}
+
+.modal-tab-pane p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.modal-tab-pane ul, .modal-tab-pane ol {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.modal-tab-pane li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.modal-tab-pane strong {
+  color: var(--text-primary);
+}
+
+/* Syntax block highlight adjustments inside learning modal */
+.modal-tab-pane pre {
+  margin: 16px 0;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow-x: auto;
+}
+
+.modal-tab-pane code {
+  font-size: 0.85rem;
+  color: #e5c07b; /* Warm tone code snippet syntax style */
+}
+
+/* ==========================================================================
+   MEDIA RESPONSIVE QUERIES
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .learning-hub-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .lang-tabs-container {
+    flex-direction: row;
+    position: relative;
+    top: 0;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scrollbar-width: thin;
+  }
+
+  .lang-tab-btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .lang-tab-btn:hover {
+    transform: none;
+  }
 }
 
 @media (max-width: 768px) {
   .services-grid {
     grid-template-columns: 1fr;
   }
+
+  .modal-container {
+    max-height: 90vh;
+  }
+
+  .modal-header {
+    padding: 25px 24px 12px 24px;
+  }
+
+  .modal-tabs-wrapper {
+    padding: 0;
+  }
+
+  .modal-tab-headers {
+    padding: 0 24px;
+  }
+
+  .modal-tab-btn {
+    padding: 12px 14px;
+    font-size: 0.85rem;
+  }
+
+  .modal-tab-content {
+    padding: 20px 24px;
+    max-height: calc(90vh - 150px);
+  }
 }
+
