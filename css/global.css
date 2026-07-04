@@ -69,6 +69,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -80,6 +81,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   position: relative;
+  width: 100%;
 }
 
 /* Keyboard Outline Focus for accessibility */
@@ -729,6 +731,7 @@ body.bg-light .theme-btn:hover, body.bg-sepia .theme-btn:hover {
   max-width: 580px;
   max-height: 85vh;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
   transform: scale(0.95);
   transition: transform var(--transition-normal);

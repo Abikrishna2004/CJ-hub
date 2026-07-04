@@ -294,6 +294,7 @@ body.bg-light .todo-filter-btn.active, body.bg-sepia .todo-filter-btn.active {
   gap: var(--space-sm);
   max-height: 380px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding-right: 4px;
 }
 
