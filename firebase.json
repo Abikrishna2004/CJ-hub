@@ -3,10 +3,11 @@
     "public": ".",
     "ignore": [
       "firebase.json",
-      "**/.*",
+      ".firebaserc",
       "**/node_modules/**",
       ".git",
-      ".gitignore"
+      ".gitignore",
+      "**/.agents/**"
     ],
     "cleanUrls": true,
     "appAssociation": "AUTO"

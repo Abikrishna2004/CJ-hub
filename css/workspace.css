@@ -58,6 +58,7 @@ body.bg-light .widget-input, body.bg-sepia .widget-input {
   cursor: pointer;
   transition: var(--transition-fast);
   box-shadow: 0 4px 12px rgba(0, 242, 254, 0.15);
+  flex-shrink: 0;
 }
 
 .widget-btn:hover {
@@ -445,5 +446,16 @@ body.bg-light .todo-edit-input, body.bg-sepia .todo-edit-input {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .widget-form {
+    flex-direction: column;
+  }
+
+  .widget-btn {
+    justify-content: center;
+    width: 100%;
   }
 }
