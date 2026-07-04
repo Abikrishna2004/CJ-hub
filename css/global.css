@@ -70,6 +70,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  background-color: var(--bg-primary);
 }
 
 body {
@@ -849,6 +850,10 @@ body.bg-light .theme-btn:hover, body.bg-sepia .theme-btn:hover {
   :root {
     --space-xl: 1.5rem;
     --space-xxl: 2rem;
+  }
+
+  body::before, body::after {
+    display: none;
   }
 
   .section-title {
