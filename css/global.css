@@ -71,6 +71,7 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   background-color: var(--bg-primary);
+  max-width: 100%;
 }
 
 body {
@@ -83,6 +84,7 @@ body {
   overflow-x: hidden;
   position: relative;
   width: 100%;
+  max-width: 100%;
 }
 
 /* Keyboard Outline Focus for accessibility */
@@ -848,6 +850,7 @@ body.bg-light .theme-btn:hover, body.bg-sepia .theme-btn:hover {
    ========================================================================== */
 @media (max-width: 768px) {
   :root {
+    --space-lg: 1rem;
     --space-xl: 1.5rem;
     --space-xxl: 2rem;
   }
@@ -881,10 +884,16 @@ body.bg-light .theme-btn:hover, body.bg-sepia .theme-btn:hover {
     border-top: 1px solid var(--border-color);
     transition: var(--transition-normal);
     z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
   }
   
   .nav-menu.open {
     left: 0;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
   }
   
   .footer-grid {
@@ -900,7 +909,7 @@ body.bg-light .theme-btn:hover, body.bg-sepia .theme-btn:hover {
 
 @media (max-width: 480px) {
   .customizer-panel {
-    right: -10px;
+    right: 0;
     width: 250px;
     max-width: calc(100vw - 32px);
   }
