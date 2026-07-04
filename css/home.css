@@ -241,11 +241,12 @@
 
   .paths-slider {
     height: 310px;
+    margin-bottom: 50px;
   }
   
   .path-slide {
-    width: 290px !important;
-    max-width: 80% !important;
+    width: 320px !important;
+    max-width: 90% !important;
     height: 260px !important;
   }
   
@@ -258,14 +259,21 @@
   .slider-arrow {
     width: 38px;
     height: 38px;
+    top: auto;
+    bottom: -45px;
+    transform: none;
   }
 
   .slider-arrow.prev {
-    left: 10px;
+    left: calc(50% - 80px);
   }
 
   .slider-arrow.next {
-    right: 10px;
+    right: calc(50% - 80px);
+  }
+
+  .slider-arrow:hover {
+    transform: scale(1.05);
   }
 }
 
@@ -277,14 +285,6 @@
   .hero-logo-container {
     width: 260px;
     height: 260px;
-  }
-
-  .slider-arrow.prev {
-    left: 5px;
-  }
-
-  .slider-arrow.next {
-    right: 5px;
   }
 }
 
