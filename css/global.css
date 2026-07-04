@@ -631,6 +631,7 @@ body.bg-light .theme-btn:hover, body.bg-sepia .theme-btn:hover {
   flex-direction: column;
   gap: var(--space-md);
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
   transform: translateY(10px);
   transition: all var(--transition-fast);
@@ -638,6 +639,7 @@ body.bg-light .theme-btn:hover, body.bg-sepia .theme-btn:hover {
 
 .customizer-panel.open {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
   transform: translateY(0);
 }
@@ -904,6 +906,10 @@ body.bg-light .theme-btn:hover, body.bg-sepia .theme-btn:hover {
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+  }
+
+  input, textarea, select {
+    font-size: 16px !important;
   }
 }
 
