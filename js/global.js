@@ -34,7 +34,7 @@ async function loadEnv() {
   };
 
   try {
-    const response = await fetch(".env");
+    const response = await fetch("/.env");
     if (response.ok) {
       const text = await response.text();
       const lines = text.split("\n");
