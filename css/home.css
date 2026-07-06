@@ -184,7 +184,7 @@
 }
 
 .path-slide {
-  position: absolute;
+  position: absolute !important;
   width: 320px !important;
   max-width: 90% !important;
   height: 280px !important;
