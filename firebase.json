@@ -1,13 +1,16 @@
 {
   "hosting": {
-    "public": ".",
+    "public": "dist",
     "ignore": [
       "firebase.json",
-      ".firebaserc",
-      "**/node_modules/**",
-      ".git",
-      ".gitignore",
-      "**/.agents/**"
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ],
     "cleanUrls": true,
     "appAssociation": "AUTO"

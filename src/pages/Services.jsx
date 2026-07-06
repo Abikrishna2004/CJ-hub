@@ -1,11 +1,14 @@
-/* ==========================================================================
-   SERVICES/LEARNING HUB INTERACTIVE CONTROLLER
-   ========================================================================== */
+import React, { useState } from 'react';
+import '../../css/services.css';
 
 const SYLLABUS_DATA = {
   python: {
     name: "Python",
-    icon: `<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.85 14.5c-.27.8-1.04 1.5-2.22 1.5-1.5 0-2.45-.73-2.65-2.07h1.94c.15.54.49.85 1 .85.45 0 .74-.26.85-.56.12-.34-.1-.73-.77-1l-.64-.26c-1.3-.53-2.08-1.28-2.08-2.43 0-1.23 1-2.18 2.4-2.18 1.45 0 2.23.75 2.44 1.83h-1.92c-.1-.4-.36-.65-.77-.65-.41 0-.64.21-.73.47-.1.31.06.6.6.82l.62.25c1.4.56 2.24 1.25 2.24 2.47-.02.61-.17 1.1-.56 1.48z"/></svg>`,
+    icon: (
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.85 14.5c-.27.8-1.04 1.5-2.22 1.5-1.5 0-2.45-.73-2.65-2.07h1.94c.15.54.49.85 1 .85.45 0 .74-.26.85-.56.12-.34-.1-.73-.77-1l-.64-.26c-1.3-.53-2.08-1.28-2.08-2.43 0-1.23 1-2.18 2.4-2.18 1.45 0 2.23.75 2.44 1.83h-1.92c-.1-.4-.36-.65-.77-.65-.41 0-.64.21-.73.47-.1.31.06.6.6.82l.62.25c1.4.56 2.24 1.25 2.24 2.47-.02.61-.17 1.1-.56 1.48z" />
+      </svg>
+    ),
     modules: [
       {
         id: "py-beg",
@@ -159,7 +162,11 @@ a[start:stop:step]</code></pre>`,
   },
   javascript: {
     name: "JavaScript",
-    icon: `<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.89h-2v-2h2v2zm0-3.11h-2V7.11h2v6.67z"/></svg>`,
+    icon: (
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.89h-2v-2h2v2zm0-3.11h-2V7.11h2v6.67z" />
+      </svg>
+    ),
     modules: [
       {
         id: "js-es6",
@@ -247,7 +254,11 @@ newDiv.style.backgroundColor = "cyan";</code></pre>`,
   },
   c: {
     name: "C Programming",
-    icon: `<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>`,
+    icon: (
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+      </svg>
+    ),
     modules: [
       {
         id: "c-basics",
@@ -334,7 +345,11 @@ free(ptr)         - Deallocate memory</code></pre>`,
   },
   java: {
     name: "Java",
-    icon: `<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>`,
+    icon: (
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+      </svg>
+    ),
     modules: [
       {
         id: "java-oop",
@@ -369,7 +384,7 @@ interface Printable {
       },
       {
         id: "java-col",
-        title: "Java Collections Framework",
+        title: "Java Collections",
         desc: "Work with ArrayLists, HashMaps, HashSets, and Iterators.",
         notes: `<h4>1. Lists & Sets</h4>
 <p><code>ArrayList</code> preserves order. <code>HashSet</code> stores unique values.</p>
@@ -399,7 +414,11 @@ map.getOrDefault(key, defVal);</code></pre>`,
   },
   htmlcss: {
     name: "HTML & CSS",
-    icon: `<svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`,
+    icon: (
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg>
+    ),
     modules: [
       {
         id: "html-semantic",
@@ -460,7 +479,11 @@ place-items: center;</code></pre>`,
   },
   cpp: {
     name: "C++",
-    icon: `<svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>`,
+    icon: (
+      <svg viewBox="0 0 24 24">
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+      </svg>
+    ),
     modules: [
       {
         id: "cpp-oop",
@@ -493,7 +516,7 @@ public:
       },
       {
         id: "cpp-stl",
-        title: "Standard Template Library (STL)",
+        title: "Standard Template Library",
         desc: "Leverage vectors, map tables, lists, and common utility methods.",
         notes: `<h4>1. Vectors</h4>
 <p>Dynamic arrays supporting fast insertions.</p>
@@ -521,180 +544,306 @@ for(auto it = v.begin(); it != v.end(); ++it) { ... }</code></pre>`,
   }
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  initLearningHub();
-});
+export default function Services() {
+  const [activeLang, setActiveLang] = useState('python');
+  const [activeModule, setActiveModule] = useState(null);
+  const [activeTab, setActiveTab] = useState('notes');
 
-function initLearningHub() {
-  const tabSidebar = document.getElementById("lang-tabs");
-  const moduleGrid = document.getElementById("modules-grid");
-  
-  if (!tabSidebar || !moduleGrid) return;
+  const activeData = SYLLABUS_DATA[activeLang] || SYLLABUS_DATA.python;
 
-  // 1. Generate Language Selector Sidebar Tabs
-  tabSidebar.innerHTML = "";
-  Object.keys(SYLLABUS_DATA).forEach((key, idx) => {
-    const lang = SYLLABUS_DATA[key];
-    const button = document.createElement("button");
-    button.className = `lang-tab-btn ${idx === 0 ? "active" : ""}`;
-    button.setAttribute("data-lang", key);
-    button.setAttribute("role", "tab");
-    button.setAttribute("aria-selected", idx === 0 ? "true" : "false");
-    button.innerHTML = `${lang.icon} <span>${lang.name}</span>`;
-    tabSidebar.appendChild(button);
-  });
+  const openModal = (mod) => {
+    setActiveModule(mod);
+    setActiveTab('notes');
+    document.body.style.overflow = 'hidden';
+  };
 
-  // 2. Load Default Language Modules (First key, e.g. Python)
-  const defaultLang = Object.keys(SYLLABUS_DATA)[0];
-  renderModules(defaultLang);
+  const closeModal = () => {
+    setActiveModule(null);
+    document.body.style.overflow = '';
+  };
 
-  // 3. Tab click delegation
-  tabSidebar.addEventListener("click", (e) => {
-    const btn = e.target.closest(".lang-tab-btn");
-    if (!btn) return;
+  return (
+    <>
+      <main id="main-content">
+        {/* SERVICES MAIN SECTION */}
+        <section className="services-hero">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-tag">Offerings</span>
+              <h1 className="section-title">Our Services</h1>
+              <p className="section-subtitle">
+                Structured paths, blueprints, and advisories to elevate your skills and prepare you for placements.
+              </p>
+            </div>
 
-    // Toggle active tab buttons state
-    document.querySelectorAll(".lang-tab-btn").forEach(b => {
-      b.classList.remove("active");
-      b.setAttribute("aria-selected", "false");
-    });
-    btn.classList.add("active");
-    btn.setAttribute("aria-selected", "true");
+            <div className="services-grid">
+              {/* 1. AI & ML Roadmaps */}
+              <div className="glass-card service-card">
+                <div className="service-card-header">
+                  <div className="service-card-icon">
+                    <svg viewBox="0 0 24 24">
+                      <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                      <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                      <line x1="6" y1="6" x2="6.01" y2="6" />
+                      <line x1="6" y1="18" x2="6.01" y2="18" />
+                    </svg>
+                  </div>
+                  <h3 className="service-card-title">AI & Machine Learning Roadmaps</h3>
+                </div>
+                <p className="service-card-desc">
+                  Comprehensive learning paths covering AI fundamentals, Machine Learning algorithms, Deep Learning, and
+                  Generative AI technologies.
+                </p>
+              </div>
 
-    // Load active language content
-    const selectedLang = btn.getAttribute("data-lang");
-    renderModules(selectedLang);
-  });
+              {/* 2. Data Science Roadmaps */}
+              <div className="glass-card service-card">
+                <div className="service-card-header">
+                  <div className="service-card-icon">
+                    <svg viewBox="0 0 24 24">
+                      <line x1="18" y1="20" x2="18" y2="10" />
+                      <line x1="12" y1="20" x2="12" y2="4" />
+                      <line x1="6" y1="20" x2="6" y2="14" />
+                    </svg>
+                  </div>
+                  <h3 className="service-card-title">Data Science Roadmaps</h3>
+                </div>
+                <p className="service-card-desc">
+                  Structured guidance for mastering Python, SQL, statistics, data visualization, machine learning, and
+                  analytical thinking.
+                </p>
+              </div>
 
-  // 4. Modal Event Listeners
-  initModalListeners();
-}
+              {/* 3. Web Dev */}
+              <div className="glass-card service-card">
+                <div className="service-card-header">
+                  <div className="service-card-icon">
+                    <svg viewBox="0 0 24 24">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                      <polyline points="2 17 12 22 22 17" />
+                      <polyline points="2 12 12 17 22 12" />
+                    </svg>
+                  </div>
+                  <h3 className="service-card-title">Web Development Guidance</h3>
+                </div>
+                <p className="service-card-desc">
+                  Learn frontend and backend development through curated resources, projects, and industry-relevant
+                  technologies.
+                </p>
+              </div>
 
-function renderModules(langKey) {
-  const moduleGrid = document.getElementById("modules-grid");
-  if (!moduleGrid) return;
+              {/* 4. DSA */}
+              <div className="glass-card service-card">
+                <div className="service-card-header">
+                  <div className="service-card-icon">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                      <path d="M2 17l10 5 10-5" />
+                      <path d="M2 12l10 5 10-5" />
+                    </svg>
+                  </div>
+                  <h3 className="service-card-title">Data Structures & Algorithms Preparation</h3>
+                </div>
+                <p className="service-card-desc">
+                  Build strong problem-solving skills and prepare effectively for coding interviews and competitive
+                  programming.
+                </p>
+              </div>
 
-  const data = SYLLABUS_DATA[langKey];
-  if (!data) return;
+              {/* 5. Project Guidance */}
+              <div className="glass-card service-card">
+                <div className="service-card-header">
+                  <div className="service-card-icon">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                    </svg>
+                  </div>
+                  <h3 className="service-card-title">Project Guidance</h3>
+                </div>
+                <p className="service-card-desc">
+                  Discover project ideas, implementation strategies, and best practices to strengthen your technical
+                  portfolio.
+                </p>
+              </div>
 
-  // Render cards with dynamic fade in transition classes
-  moduleGrid.style.opacity = 0;
-  setTimeout(() => {
-    moduleGrid.innerHTML = "";
-    data.modules.forEach(mod => {
-      const card = document.createElement("div");
-      card.className = "glass-card module-card";
-      card.setAttribute("data-module-id", mod.id);
-      card.setAttribute("data-lang-key", langKey);
-      card.innerHTML = `
-        <h3 class="module-card-title">${mod.title}</h3>
-        <p class="module-card-desc">${mod.desc}</p>
-        <span class="module-card-action">
-          Explore Syllabus
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </span>
-      `;
-      moduleGrid.appendChild(card);
-    });
-    moduleGrid.style.opacity = 1;
-  }, 150);
-}
+              {/* 6. Career */}
+              <div className="glass-card service-card">
+                <div className="service-card-header">
+                  <div className="service-card-icon">
+                    <svg viewBox="0 0 24 24">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                  </div>
+                  <h3 className="service-card-title">Career Guidance</h3>
+                </div>
+                <p className="service-card-desc">
+                  Get support with resume building, LinkedIn optimization, internship preparation, placement readiness, and
+                  career planning.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-function initModalListeners() {
-  const modalOverlay = document.getElementById("learning-modal");
-  const modalClose = document.getElementById("learning-modal-close");
-  const moduleGrid = document.getElementById("modules-grid");
+        {/* INTERACTIVE LEARNING HUB */}
+        <section className="learning-hub-section" id="learn-coding">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-tag">Interactive Syllabus</span>
+              <h2 className="section-title">💻 Learn Coding</h2>
+              <p className="section-subtitle">
+                Select a technology to explore structured learning paths, study notes, cheat sheets, practice problems, and
+                mini projects.
+              </p>
+            </div>
 
-  if (!modalOverlay || !modalClose || !moduleGrid) return;
+            <div className="learning-hub-grid">
+              {/* Left Column: Language Selection Tabs */}
+              <div className="lang-tabs-container" role="tablist" aria-label="Coding Languages">
+                {Object.keys(SYLLABUS_DATA).map((key) => (
+                  <button
+                    key={key}
+                    className={`lang-tab-btn ${activeLang === key ? 'active' : ''}`}
+                    onClick={() => setActiveLang(key)}
+                    role="tab"
+                    aria-selected={activeLang === key}
+                  >
+                    {SYLLABUS_DATA[key].icon}
+                    <span>{SYLLABUS_DATA[key].name}</span>
+                  </button>
+                ))}
+              </div>
 
-  // Open modal on card click
-  moduleGrid.addEventListener("click", (e) => {
-    const card = e.target.closest(".module-card");
-    if (!card) return;
+              {/* Right Column: Modules Explorer */}
+              <div className="modules-explorer-container">
+                <div className="modules-grid">
+                  {activeData.modules.map((mod) => (
+                    <div key={mod.id} className="glass-card module-card" onClick={() => openModal(mod)}>
+                      <h3 className="module-card-title">{mod.title}</h3>
+                      <p className="module-card-desc">{mod.desc}</p>
+                      <span className="module-card-action">
+                        Explore Syllabus
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
 
-    const modId = card.getAttribute("data-module-id");
-    const langKey = card.getAttribute("data-lang-key");
-    openSyllabusModal(langKey, modId);
-  });
+      {/* Interactive Learning Syllabus Modal */}
+      {activeModule && (
+        <div
+          className="modal-overlay open"
+          id="learning-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-lang-title"
+          onClick={closeModal}
+        >
+          <div className="glass-card modal-container" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-btn" onClick={closeModal} aria-label="Close Modal">
+              <svg viewBox="0 0 24 24">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
 
-  // Close modal
-  modalClose.addEventListener("click", () => {
-    closeSyllabusModal();
-  });
+            <div className="modal-header">
+              <span className="modal-tag" id="modal-lang-title">
+                {activeData.name}
+              </span>
+              <h3 className="modal-title" id="modal-module-title">
+                {activeModule.title}
+              </h3>
+            </div>
 
-  modalOverlay.addEventListener("click", (e) => {
-    if (e.target === modalOverlay) {
-      closeSyllabusModal();
-    }
-  });
+            {/* Inner Modal Tabs */}
+            <div className="modal-tabs-wrapper">
+              <div className="modal-tab-headers" role="tablist" aria-label="Syllabus Sections">
+                <button
+                  className={`modal-tab-btn ${activeTab === 'notes' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('notes')}
+                  role="tab"
+                  aria-selected={activeTab === 'notes'}
+                >
+                  Notes
+                </button>
+                <button
+                  className={`modal-tab-btn ${activeTab === 'cheat' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('cheat')}
+                  role="tab"
+                  aria-selected={activeTab === 'cheat'}
+                >
+                  Cheat Sheet
+                </button>
+                <button
+                  className={`modal-tab-btn ${activeTab === 'practice' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('practice')}
+                  role="tab"
+                  aria-selected={activeTab === 'practice'}
+                >
+                  Practice Problems
+                </button>
+                <button
+                  className={`modal-tab-btn ${activeTab === 'projects' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('projects')}
+                  role="tab"
+                  aria-selected={activeTab === 'projects'}
+                >
+                  Mini Projects
+                </button>
+              </div>
 
-  // Handle Tab Switch within Modal (Notes / Cheat Sheet / Practice / Projects)
-  const modalTabsContainer = document.querySelector(".modal-tab-headers");
-  if (modalTabsContainer) {
-    modalTabsContainer.addEventListener("click", (e) => {
-      const tabBtn = e.target.closest(".modal-tab-btn");
-      if (!tabBtn) return;
-
-      document.querySelectorAll(".modal-tab-btn").forEach(btn => {
-        btn.classList.remove("active");
-      });
-      tabBtn.classList.add("active");
-
-      const targetPane = tabBtn.getAttribute("data-tab-target");
-      document.querySelectorAll(".modal-tab-pane").forEach(pane => {
-        pane.classList.remove("active");
-      });
-      const activePane = document.getElementById(targetPane);
-      if (activePane) activePane.classList.add("active");
-    });
-  }
-}
-
-function openSyllabusModal(langKey, modId) {
-  const modalOverlay = document.getElementById("learning-modal");
-  const modalTitle = document.getElementById("modal-lang-title");
-  const modalSub = document.getElementById("modal-module-title");
-
-  const paneNotes = document.getElementById("pane-notes");
-  const paneCheat = document.getElementById("pane-cheat");
-  const panePractice = document.getElementById("pane-practice");
-  const paneProjects = document.getElementById("pane-projects");
-
-  if (!modalOverlay || !paneNotes || !paneCheat || !panePractice || !paneProjects) return;
-
-  const lang = SYLLABUS_DATA[langKey];
-  const mod = lang.modules.find(m => m.id === modId);
-  if (!lang || !mod) return;
-
-  // Set Titles
-  modalTitle.textContent = lang.name;
-  modalSub.textContent = mod.title;
-
-  // Populate Tab Content Pane
-  paneNotes.innerHTML = mod.notes || "<p>Notes under construction.</p>";
-  paneCheat.innerHTML = mod.cheatSheet || "<p>No cheat sheet syntax available.</p>";
-  panePractice.innerHTML = mod.practice || "<p>Practice problems coming soon.</p>";
-  paneProjects.innerHTML = mod.projects || "<p>Project guidelines coming soon.</p>";
-
-  // Reset Modal Tabs to default (Notes tab active)
-  document.querySelectorAll(".modal-tab-btn").forEach((btn, idx) => {
-    if (idx === 0) btn.classList.add("active");
-    else btn.classList.remove("active");
-  });
-  document.querySelectorAll(".modal-tab-pane").forEach((pane, idx) => {
-    if (idx === 0) pane.classList.add("active");
-    else pane.classList.remove("active");
-  });
-
-  // Open overlay
-  modalOverlay.classList.add("open");
-  document.body.style.overflow = "hidden"; // Lock page body scroll
-}
-
-function closeSyllabusModal() {
-  const modalOverlay = document.getElementById("learning-modal");
-  if (!modalOverlay) return;
-
-  modalOverlay.classList.remove("open");
-  document.body.style.overflow = ""; // Restore scroll
+              <div className="modal-tab-content">
+                {activeTab === 'notes' && (
+                  <div
+                    className="modal-tab-pane active"
+                    dangerouslySetInnerHTML={{ __html: activeModule.notes || '<p>Notes under construction.</p>' }}
+                  />
+                )}
+                {activeTab === 'cheat' && (
+                  <div
+                    className="modal-tab-pane active"
+                    dangerouslySetInnerHTML={{
+                      __html: activeModule.cheatSheet || '<p>No cheat sheet syntax available.</p>',
+                    }}
+                  />
+                )}
+                {activeTab === 'practice' && (
+                  <div
+                    className="modal-tab-pane active"
+                    dangerouslySetInnerHTML={{ __html: activeModule.practice || '<p>Practice problems coming soon.</p>' }}
+                  />
+                )}
+                {activeTab === 'projects' && (
+                  <div
+                    className="modal-tab-pane active"
+                    dangerouslySetInnerHTML={{ __html: activeModule.projects || '<p>Project guidelines coming soon.</p>' }}
+                  />
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
 }
